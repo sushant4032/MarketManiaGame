@@ -2,20 +2,53 @@
 <html>
 <title>Market Maniac</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="libs/w3.css">
-<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="main.js"></script>
 
-<div class="w3-container w3-teal">
-  <h1>My Car</h1>
-</div>
+<body ng-app="myApp" ng-controller="myCtrl">
 
-<div class="w3-container">
-  <p>A car is a wheeled, self-powered motor vehicle used for transportation.</p>
-</div>
+  <div id="main-header">
+    Guess The Price
+  </div>
 
-<div class="w3-container w3-teal">
-  <p>My footer information</p>
+  <div id="content">
+    <div id="item">
+      <img id="img" src="img/{{i}}.jpg">
+      <div id="des">{{d}}</div>
+    </div>
+
+    <div id="control">
+      <div id="options">
+        <button class="option" ng-disabled="ansd" ng-click=check(0)>Rs.{{p1}}</button>
+        <button class="option" ng-disabled="ansd" ng-click=check(1)>Rs.{{p2}}</button>
+        <button class="option" ng-disabled="ansd" ng-click=check(2)>Rs.{{p3}}</button>
+        <button class="option" ng-disabled="ansd" ng-click=check(3)>Rs.{{p4}}</button>
+      </div>
+
+      <div id="right" ng-show="right" class="result">
+        Right
+      </div>
+
+      <div id="wrong" ng-show="wrong" class="result">
+        Wrong!
+      </div>
+
+      <div id="ansd" ng-show="ansd">
+<div id="price">
+  Right Price : Rs. {{p}}
 </div>
+        <button ng-click=ref()>Play Again</button>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
 
 </body>
-</html> 
+
+</html>
