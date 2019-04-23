@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-<title>Market Maniac</title>
+<title>GuessPrice</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="libs/angular.js"></script>
 <script src="main.js"></script>
 
 <body ng-app="myApp" ng-controller="myCtrl">
@@ -21,32 +20,38 @@
 
     <div id="control">
       <div id="options">
-        <button class="option" ng-disabled="ansd" ng-click=check(0)>Rs.{{p1}}</button>
-        <button class="option" ng-disabled="ansd" ng-click=check(1)>Rs.{{p2}}</button>
-        <button class="option" ng-disabled="ansd" ng-click=check(2)>Rs.{{p3}}</button>
-        <button class="option" ng-disabled="ansd" ng-click=check(3)>Rs.{{p4}}</button>
+        <button class="option" ng-disabled="ansd" ng-click=check(0)>Rs. {{p1}}</button>
+        <button class="option" ng-disabled="ansd" ng-click=check(1)>Rs. {{p2}}</button>
+        <button class="option" ng-disabled="ansd" ng-click=check(2)>Rs. {{p3}}</button>
+        <button class="option" ng-disabled="ansd" ng-click=check(3)>Rs. {{p4}}</button>
       </div>
 
-      <div id="right" ng-show="right" class="result">
-        Right
-      </div>
 
-      <div id="wrong" ng-show="wrong" class="result">
-        Wrong!
-      </div>
 
       <div id="ansd" ng-show="ansd">
-<div id="price">
-  Right Price : Rs. {{p}}
-</div>
-        <button ng-click=ref()>Play Again</button>
+        <div id="right" ng-show="right" class="result">
+          Right
+        </div>
+
+        <div id="wrong" ng-show="wrong" class="result">
+          Wrong!
+        </div>
+        <div id="price" ng-show="wrong">
+          Right Price : Rs. {{p}}
+        </div>
+        <button id="again" ng-click=ref()>Play Again</button>
       </div>
 
 
     </div>
+
   </div>
 
+  <div id="footer">
 
+    &#169 Sushant Tiwari
+    <span id="ans">{{r}}</span>
+  </div>
 
 
 </body>

@@ -19,6 +19,9 @@ app.controller("myCtrl", function ($scope) {
         i = $scope.i;
         $scope.p = prices[i];
         $scope.d = descs[i];
+        options();
+    }
+    function options() {
         $scope.r = Math.floor(4 * Math.random());
         if ($scope.r == 0) {
             $scope.p1 = $scope.p;
@@ -44,8 +47,21 @@ app.controller("myCtrl", function ($scope) {
             $scope.p3 = Math.floor(($scope.p / 2) + $scope.p * Math.random());
             $scope.p1 = Math.floor(($scope.p / 2) + $scope.p * Math.random());
         }
+        checkOptions();
     }
-
+    function checkOptions() {
+        var x1 = $scope.p1;
+        var x2 = $scope.p2;
+        var x3 = $scope.p3;
+        var x4 = $scope.p4;
+        if ((x1 - x2) * (x1 - x3) * (x1 - x4) * (x2 - x3) * (x2 - x4) * (x3 - x4) == 0) {
+            console.log(x1);
+            console.log(x2);
+            console.log(x3);
+            console.log(x4);
+            options();
+        }
+    }
     $scope.check = function (r) {
         $scope.ansd = true;
         if (r == $scope.r) {
