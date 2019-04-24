@@ -2,58 +2,49 @@
 <html>
 <title>GuessPrice</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css">
-<script src="libs/angular.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- <script src="libs/angular.js"></script> -->
+
+
 <script src="main.js"></script>
+<link rel="stylesheet" href="styles.css">
 
 <body ng-app="myApp" ng-controller="myCtrl">
-
-  <div id="main-header">
+  <header>
     Guess The Price
+  </header>
+  <div id="pic">
+    <img src="img/{{i}}.jpg" alt="" style="width:90%; height:85%;">
   </div>
-
-  <div id="content">
-    <div id="item">
-      <img id="img" src="img/{{i}}.jpg">
-      <div id="des">{{d}}</div>
+  <div id="control">
+    <div id="des">{{d}}</div>
+    <div id="options">
+      <button ng-disabled="ansd" ng-click=check(0)><span class="rs">Rs. </span>{{p1}}</button>
+      <button ng-disabled="ansd" ng-click=check(1)><span class="rs">Rs. </span>{{p2}}</button>
+      <button ng-disabled="ansd" ng-click=check(2)><span class="rs">Rs. </span>{{p3}}</button>
+      <button ng-disabled="ansd" ng-click=check(3)><span class="rs">Rs. </span>{{p4}}</button>
     </div>
-
-    <div id="control">
-      <div id="options">
-        <button class="option" ng-disabled="ansd" ng-click=check(0)>Rs. {{p1}}</button>
-        <button class="option" ng-disabled="ansd" ng-click=check(1)>Rs. {{p2}}</button>
-        <button class="option" ng-disabled="ansd" ng-click=check(2)>Rs. {{p3}}</button>
-        <button class="option" ng-disabled="ansd" ng-click=check(3)>Rs. {{p4}}</button>
-      </div>
-
-
-
-      <div id="ansd" ng-show="ansd">
+    <div id="ansd">
+      <div ng-show="ansd">
         <div id="right" ng-show="right" class="result">
+          <img src="res/rt.png" alt="" width="50px">
           Right
         </div>
 
         <div id="wrong" ng-show="wrong" class="result">
+          <img src="res/wr.png" alt="" width="50px">
           Wrong!
         </div>
         <div id="price" ng-show="wrong">
           Right Price : Rs. {{p}}
         </div>
-        <button id="again" ng-click=ref()>Play Again</button>
+        <div id="again">
+          <button ng-click=ref()>Play Again</button>
+        </div>
       </div>
-
-
     </div>
-
   </div>
-
-  <div id="footer">
-
-    &#169 Sushant Tiwari
-    <span id="ans">{{r}}</span>
-  </div>
-
-
 </body>
 
 </html>
