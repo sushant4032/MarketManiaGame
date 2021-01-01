@@ -14,37 +14,41 @@
   <header>
     Guess The Price
   </header>
+  <main>
   <div id="pic">
     <img src="img/{{i}}.jpg" alt="" style="width:90%; height:85%;">
   </div>
-  <div id="control">
-    <div id="des">{{d}}</div>
-    <div id="options">
-      <button ng-disabled="ansd" ng-click=check(0)><span class="rs">Rs. </span>{{p1}}</button>
-      <button ng-disabled="ansd" ng-click=check(1)><span class="rs">Rs. </span>{{p2}}</button>
-      <button ng-disabled="ansd" ng-click=check(2)><span class="rs">Rs. </span>{{p3}}</button>
-      <button ng-disabled="ansd" ng-click=check(3)><span class="rs">Rs. </span>{{p4}}</button>
-    </div>
-    <div id="ansd">
-      <div ng-show="ansd">
-        <div id="right" ng-show="right" class="result">
-          <img src="res/rt.png" alt="" width="50px">
-          Right
-        </div>
-
-        <div id="wrong" ng-show="wrong" class="result">
-          <img src="res/wr.png" alt="" width="50px">
-          Wrong!
-        </div>
-        <div id="price" ng-show="wrong">
-          Right Price : Rs. {{p}}
-        </div>
-        <div id="again">
-          <button ng-click=ref()>Play Again</button>
+    <div id="control">
+      <div id="des">{{d}}</div>
+      <div id="options">
+        <button ng-disabled="ansd" ng-click=check(0)><span class="rs">Rs. </span>{{p1}}</button>
+        <button ng-disabled="ansd" ng-click=check(1)><span class="rs">Rs. </span>{{p2}}</button>
+        <button ng-disabled="ansd" ng-click=check(2)><span class="rs">Rs. </span>{{p3}}</button>
+        <button ng-disabled="ansd" ng-click=check(3)><span class="rs">Rs. </span>{{p4}}</button>
+      </div>
+      <div id="ansd">
+        <div ng-show="ansd">
+          <div id="right" ng-show="right" class="result">
+            <img src="res/rt.png" alt="" width="50px">
+            Right
+          </div>
+    
+          <div id="wrong" ng-show="wrong" class="result">
+            <img src="res/wr.png" alt="" width="50px">
+            Wrong!
+          </div>
+          <div id="price" ng-show="wrong">
+            Right Price : Rs. {{p}}
+          </div>
+          <div id="again">
+            <button ng-click=ref()>Play Again</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
+
+
 </body>
 
 </html>
